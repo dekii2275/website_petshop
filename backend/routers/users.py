@@ -15,11 +15,12 @@ async def signup(user: Register, db: Session = Depends(get_db)):
     try:
         if UserRepo.get_user_by_email(db, user.email):
             return ResponseSchema(code="400", status="Error", message="Email already registered")
+        password_hashed = pwd_context.hash(user.password)
         UserRepo.create_user(
             db,
             username=user.username,
             email=user.email,
-            password_plain=user.password,
+            password_plain=password_hashed,
             phone_number=user.phone_number,
             first_name=user.first_name,
             last_name=user.last_name,

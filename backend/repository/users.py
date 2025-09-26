@@ -26,11 +26,11 @@ class UserRepo:
         first_name: str,
         last_name: str
     ) -> User:
-        hashed = pwd_context.hash(password_plain)
+        #hashed = pwd_context.hash(password_plain)
         u = User(
             username=username,
             email=email,
-            password=hashed,
+            password=password_plain,
             phone_number=phone_number,
             first_name=first_name,
             last_name=last_name,
