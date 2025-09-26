@@ -15,6 +15,10 @@ class Register(BaseModel):
     phone_number: str
     first_name: str
     last_name: str
+    date_of_birth: int
+    month_of_birth: int
+    year_of_birth: int
+    country: str
 
 # response model
 class ResponseSchema(BaseModel):

@@ -24,7 +24,11 @@ class UserRepo:
         password_plain: str,
         phone_number: str,
         first_name: str,
-        last_name: str
+        last_name: str, 
+        date_of_birth: int,
+        month_of_birth: int,
+        year_of_birth: int,
+        country: str,
     ) -> User:
         #hashed = pwd_context.hash(password_plain)
         u = User(
@@ -34,6 +38,10 @@ class UserRepo:
             phone_number=phone_number,
             first_name=first_name,
             last_name=last_name,
+            date_of_birth=date_of_birth,
+            month_of_birth=month_of_birth,
+            year_of_birth=year_of_birth,
+            country=country,
         )
         db.add(u)
         db.commit()

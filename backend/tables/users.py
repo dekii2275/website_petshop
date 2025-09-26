@@ -13,4 +13,8 @@ class User(Base):
     phone_number = Column(String(50), nullable=False)
     first_name = Column(String(100), nullable=False)
     last_name = Column(String(100), nullable=False)
+    date_of_birth = Column(Integer, nullable=False)
+    month_of_birth = Column(Integer, nullable=False)
+    year_of_birth = Column(Integer, nullable=False)
+    country = Column(String(100), nullable=False)
     date = Column(DateTime, server_default=func.now())

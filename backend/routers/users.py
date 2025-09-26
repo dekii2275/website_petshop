@@ -24,6 +24,10 @@ async def signup(user: Register, db: Session = Depends(get_db)):
             phone_number=user.phone_number,
             first_name=user.first_name,
             last_name=user.last_name,
+            date_of_birth=user.date_of_birth,
+            month_of_birth=user.month_of_birth,
+            year_of_birth=user.year_of_birth,
+            country=user.country,
         )
         return ResponseSchema(code="200", status="Success", message="User created successfully")
     except Exception as e:
